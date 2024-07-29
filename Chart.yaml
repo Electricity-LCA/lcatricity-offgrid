@@ -1,0 +1,5 @@
+apiVersion: v2
+name: my-k3s-app
+description: A Helm chart for k3s for deploying lcatricity dashboard and api on a Raspberry Pi (or other low compute) cluster
+version: 0.1.0
+appVersion: "1.0.0"

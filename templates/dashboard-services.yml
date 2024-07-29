@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-webserver
+spec:
+  selector:
+    app: webserver
+  ports:
+    - port: {{ .Values.webserver.port }}
+      targetPort: {{ .Values.webserver.port }}
