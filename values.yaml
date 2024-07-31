@@ -2,20 +2,20 @@ replicaCount: 1
 
 webserver:
   image:
-    repository: lcatricity-dashboard-image
+    repository: limes389/lcatricity_dashboard
     tag: latest
   port: 80
 
 api:
   image:
-    repository: lcatricity-api-image
+    repository: limes389/lcatricity_api
     tag: latest
   port: 9000
 
 resources:
   limits:
     cpu: 500m
-    memory: 512Mi
+    memory: 1g
   requests:
     cpu: 250m
-    memory: 256Mi
+    memory: 1g
