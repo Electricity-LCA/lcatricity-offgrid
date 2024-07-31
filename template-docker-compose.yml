@@ -1,0 +1,37 @@
+services:
+    lcatricity_api:
+        image: limes389/lcatricity_api:latest
+        container_name: lcatricity_api
+
+        ports:
+        - "9000:9000"
+
+        environment:
+            ELEC_LCA_DB_HOST: 'FILL_ME'
+            ELEC_LCA_DB_NAME: 'FILL_ME'
+            ELEC_LCA_DB_LOGIN: 'FILL_ME'
+            ELEC_LCA_DB_PWD: 'FILL_ME'
+            ELEC_LCA_DB_PORT: 'FILL_ME'
+            ELEC_LCA_API_URL: 'FILL_ME'
+            ELEC_LCA_API_PORT: '9000'
+        command: uvicorn lcatricity_api.microservice.main:app --reload --host 0.0.0.0 --port 9000
+
+    lcatricity_dashboard:
+        image: limes389/lcatricity_dashboard
+
+        container_name: lcatricity_dashboard
+
+        ports:
+        - "80:8501"
+
+        environment:
+            ELEC_LCA_DB_HOST: 'FILL_ME'
+            ELEC_LCA_DB_NAME: 'FILL_ME'
+            ELEC_LCA_DB_LOGIN: 'FILL_ME'
+            ELEC_LCA_DB_PWD: 'FILL_ME'
+            ELEC_LCA_DB_PORT: 'FILL_ME'
+            ELEC_LCA_API_URL: 'FILL_ME'
+            ELEC_LCA_API_PORT: '9000'
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
