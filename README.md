@@ -19,4 +19,6 @@ sudo nano /boot/firmware/cmdline.txt
 ```
 Then append to the end of the line `cgroup_memory=1 cgroup_enable=memory` (the result should be still a file with one line)
 3. [Get helm](https://helm.sh/docs/intro/install/)
-3. 
+
+# Converting a docker-compose to a kubernetes helm chart
+Use [Kompose](https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/)
